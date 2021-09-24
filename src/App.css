@@ -1,0 +1,174 @@
+.App {
+  text-align: center;
+}
+
+.light {
+  background: #fff;
+}
+
+.dark {
+  background: #000;
+}
+
+.header{
+  font-size: 20px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  
+}
+.-dark {
+  color: white;
+  background-color: #063048;
+  border-bottom: 1px solid white;
+  border-right: 10px solid #063048;
+  border-left: 10px solid #063048;
+}
+.-light {
+  color: gray;
+  background-color: white;
+  border-bottom: 1px solid black;
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+}
+
+.search {
+  font-weight: normal;
+}
+
+.flight-search-header {
+  background-color: #063048;
+  min-height: 100vh;
+  padding-bottom: 355px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.search-form-label {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border: 25px solid rgb(96 105 119 / 60);
+  background-color: rgb(96 105 119 / 60);
+  margin-top: 10px;
+}
+
+.select {
+  border: none !important;
+  outline: none !important;
+}
+
+.select-origin,
+.select-destination {
+  border: 1px solid rgb(255, 255, 255);
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+}
+
+.button-date {
+  margin-right: 5px;
+}
+
+.button-passanger-count {
+  margin-right: 5px;
+}
+
+.plane-icon {
+  color: black;
+  background-color: white;
+  height: 35px;
+  margin-bottom: -5px;
+}
+
+.passenger {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flight-pro-info {
+  display: flex;
+  text-align: left;
+  margin: 15px 75% 15px 101px;
+  flex-direction: column;
+}
+
+.flight-list-card {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-filter-criteria {
+  background-color: #282c34 !important;
+  color: white;
+  text-align: center;
+  display: flex;
+}
+
+.sort-criteria {
+  margin-left: 66%;
+  margin-top: 5px;
+}
+
+.sort-filter-button {
+  display: flex;
+  justify-content: space-evenly;
+  width: 25%;
+  margin-right: 0%;
+  margin-left: 0%;
+}
+
+.card-list-info {
+  display: flex;
+}
+
+.card-list-first {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+.card-list-second {
+  margin: 10px;
+}
+
+.card-list-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  height: 50px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+.success-page {
+  padding-top: 20px;
+}
+
+.error-page {
+  padding-top: 20px;
+}
+
+input[type="radio"] {
+  margin: 15px 5px 0 13px;
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+}
+
+#popover-contained {
+  margin-left: 25px;
+}
