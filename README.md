@@ -1,8 +1,7 @@
 # Flight Search
-React.js 
 
 ## Description:
-Simple Flight Search Web App
+Simple Flight Search Web App with React.js
 
 * airport of origin and destination
 * number of person
