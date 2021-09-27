@@ -43,9 +43,9 @@ function FlightList() {
 
         let prevOrders = [...data.flights];
         let clicked = newData.slice(2, 3);
-        var itemToMoveAtLast = prevOrders.splice(clicked, 1);
-        var updatedOrderList = prevOrders.concat(itemToMoveAtLast);
-        data = [{ flights: updatedOrderList.reverse() }]
+        var itemToMove = prevOrders.splice(clicked, 1);
+        var updatedOrderList = itemToMove.concat(prevOrders)
+        data = [{ flights: updatedOrderList }]
 
         document.getElementById(newData.slice(0, 2) + 0).checked = true;
 
@@ -72,6 +72,7 @@ function FlightList() {
     const [show, setSwitch] = useState(false);
     const handleSwitchButton = () => {
         setSwitch(!show);
+        console.log("saadas", show)
     }
 
     let [newList] = useState([]);
@@ -157,7 +158,8 @@ function FlightList() {
                                                     <div>{'Yolcu Başına'}
                                                         <br></br>
                                                         <span style={{ fontWeight: 'bold' }}>{each.fareCategories.ECONOMY && each.fareCategories.ECONOMY.subcategories && each.fareCategories.ECONOMY.subcategories[0].price.currency}
-                                                            {''} {each.fareCategories.ECONOMY && each.fareCategories.ECONOMY.subcategories && show ? each.fareCategories.ECONOMY.subcategories[0].price.amount / 2 : each.fareCategories.ECONOMY.subcategories[0].price.amount}</span>
+                                                            {''} {each.fareCategories.ECONOMY && each.fareCategories.ECONOMY.subcategories 
+                                                           && show ? each.fareCategories.ECONOMY.subcategories[0].price.amount / 2 : each.fareCategories.ECONOMY.subcategories[0].price.amount}</span>
                                                     </div>
                                                 </div>
                                             </ListGroup.Item>
@@ -170,7 +172,7 @@ function FlightList() {
                                                     <div>{'Yolcu Başına'}
                                                         <br></br>
                                                         <span style={{ fontWeight: 'bold' }}>{each.fareCategories.BUSINESS && each.fareCategories.BUSINESS.subcategories && each.fareCategories.BUSINESS.subcategories[0].price.currency}
-                                                            {''}  {each.fareCategories.BUSINESS && each.fareCategories.BUSINESS.subcategories && show ? each.fareCategories.BUSINESS.subcategories[0].price.amount / 2 : each.fareCategories.BUSINESS.subcategories[0].price.amount}</span>
+                                                            {''}  {each.fareCategories.BUSINESS && each.fareCategories.BUSINESS.subcategories && each.fareCategories.BUSINESS.subcategories[0].price.amount}</span>
                                                     </div>
                                                 </div>
 
@@ -183,7 +185,7 @@ function FlightList() {
                                                         <Card.Header>
                                                             <div className="card-list-header">
                                                                 <div>{item.brandCode}</div>
-                                                                <div>{item.price.currency} {show ? item.price.amount / 2 : item.price.amount}</div>
+                                                                <div>{item.price.currency} {show && item.brandCode === "ecoFly" ? item.price.amount / 2 : item.price.amount}</div>
                                                             </div>
                                                         </Card.Header>
                                                         <Card.Body>
@@ -209,7 +211,7 @@ function FlightList() {
                                                         <Card.Header>
                                                             <div className="card-list-header">
                                                                 <div>{item.brandCode}</div>
-                                                                <div>{item.price.currency} {show ? item.price.amount / 2 : item.price.amount}</div>
+                                                                <div>{item.price.currency} {item.price.amount}</div>
                                                             </div>
                                                         </Card.Header>
                                                         <Card.Body>
@@ -218,7 +220,7 @@ function FlightList() {
                                                             }
                                                         </Card.Body>
                                                         {
-                                                            idx > 0 && show ?
+                                                             show ?
                                                                 <Button id={idx} value={item.price.amount} onClick={handleFly} disabled={show} variant="danger">{'Uçuşu Seç'}</Button>
                                                                 : <Button id={idx} value={item.price.amount} onClick={handleFly} variant="danger">{'Uçuşu Seç'}</Button>
                                                         }
